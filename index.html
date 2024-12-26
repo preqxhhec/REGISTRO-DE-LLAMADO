@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  
+  <title>REGISTRO DE LLAMADO</title>
+</head>
+<body>
+
+
+  <div id="acceso" class="acceso">
+    <h2>ACCESO RESTRINGIDO</h2>
+    <input type="password" id="password" placeholder="Contraseña">
+    <button onclick="verificarContraseña()" class="botonpwd">OK</button>
+</div>
+
+
+
+
+
+
+
+
+  <form id="form" class="form" name="form" action="https://script.google.com/macros/s/AKfycbwmmFPFGMbw_VwC-KnG5jHFOUgWVCajq6-R8jhNApmbtBbLdemRBKJhYuyVyRR6kxeb/exec" method="post">
+    
+    <div class="img">
+    <img class="img" src="https://www.hospitalillapel.cl/institucional/wp-content/uploads/2019/07/LOGO-CHICO-03_hospital_vert.png">
+    
+    </div>
+    <h1 class="h1">REGISTRO DE LLAMADO</h1>
+
+
+
+
+    <fieldset class="fieldset1">
+
+      <LEgend class="legend"> DATOS DEL PACIENTE</LEgend>
+    <div class="divFecha">
+       
+      <label for="fecha" class="fecha" name="fecha">FECHA IND QX</label>
+      <input type="datetime" name="fecha" id="fecha" class="fecha" readonly>
+
+    </div>
+
+    <div class="divNombrePx">
+      <label for="nombrePx" class="label">NOMBRE Y APELLIDO</label>
+      <input type="text" class="nombrePx" name="nombrePx" required>
+      
+    </div>
+
+    <div class="divRutPx">
+    <label for="rutPx" class="label">RUT</label>
+      <input type="text" class="rutPx" name="rutPx" required placeholder="Sin (.) con (-)">
+
+      <label for="contacto">TELEFONO</label>
+      <input type="text" class="contacto" name="contacto" required>
+
+    </div>
+
+
+  <div class="divLat">
+    <label for="diagnostico">DIAGNÓSTICO</label>
+    <input type="text" class="dx" name="dx" required>
+    
+</div>
+      
+   
+    </fieldset>
+
+
+
+
+
+    <fieldset class="fieldset2">
+      <LEGEnd class="legend">DATOS DEL RECEPTOR</LEGEnd>
+    
+     <div class="divNombreRec">
+      <label for="nombreRec" class="label">NOMBRE Y APELLIDO</label>
+      <input type="text" class="nombreRec" name="nombreRec" required>
+      <label for="rutRec" class="label">RUT</label>
+      <input type="text" class="rutRec" name="rutRec" required placeholder="Sin (.) con (-)">
+      
+    </div>
+
+
+    <div class="divNombreRec">
+      <label for="parentesco" class="label">PARENTESCO CON EL PACIENTE</label>
+      <input type="text" class="parentesco" name="parentesco" required>
+</div>
+
+
+
+
+<div>
+  <label for="MOTIVO">MOTIVO</label>
+  <select class="selectMotivo" name="selectMotivo" required id="selecMotivo">
+    <option value=""></option>
+    <option value="HORA DE EXAMENES">HORA DE EXAMENES</option>
+    <option value="HORA DE ANESTESIA">HORA DE ANESTESIA</option>
+    <option value="ACTUALIZACION DE INFORMACION / CONTINUIDAD DEL PROCESO">ACTUALIZACION DE INFORMACION / CONTINUIDAD DEL PROCESO</option>
+    <option value="FECHA CIRUGIA">FECHA CIRUGIA</option>
+
+  </select>
+</div>
+
+
+<DIv></DIv>
+  <label for="Respuesta">RESPUESTA</label>
+  <select class="selectRespuesta" name="selectRespuesta" required id="selectRespuesta">
+    <option value=""></option>
+    <option value="ACEPTA HORA AGENDADA">ACEPTA HORA AGENDADA</option>
+    <option value="RECHAZA">RECHAZA</option>
+    <option value="POSTERGA">POSTERGA</option>
+    <option value="NO RESPONDE LLAMADA">NO RESPONDE LLAMADA</option>
+    <option value="ENTREGARA INFORMACION">ENTREGARA INFORMACION</option>
+
+  </select>  
+   
+
+</div>
+
+
+  
+</fieldset>
+
+<Fieldset class="fieldset3">
+    
+<LEgend class="legend">OBSERVACIONES</LEgend>
+
+
+<div class="divObservaciones">
+  
+<div>
+  <textarea class="ttobservaciones" name="ttobservaciones" id="ttobservaciones" rows="5" placeholder="Sea lo más específico posible" required></textarea>
+
+</div>
+
+    
+</Fieldset>
+
+
+
+
+<div class= "funcionario">
+    <label>FUNCIONARIO</label>
+  
+    <select name="selectFuncionario" id="selectFuncionario" class="selectFuncionario">
+        <option value=""></option>
+        <option value="MILEIDY MORALES">MILEIDY</option>
+        <option value="EMIKER PALMI">EMIKER PALMI</option>
+        <option value="PAULA LEIVA">PAULA LEIVA</option>
+        <option value="PAOLA VARAS (DENTAL)">PAOLA VARAS (DENTAL)</option>
+        <option value="KATHERINA ALCAYAGA (GINE)">KATHERINA ALCAYAGA (GINE)</option>
+
+     
+    </select>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="botones">
+
+    <button type="submit" class="BTN" name="BTN" id="BTN">REGISTRAR</button>
+    <button type="reset" class="BTNR" name="BTNR" id="BTNR">NUEVO PACIENTE</button> 
+</div>
+</fieldset>
+
+
+
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
