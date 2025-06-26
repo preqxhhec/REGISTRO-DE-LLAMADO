@@ -72,7 +72,7 @@ document.getElementById('BTN').addEventListener('click', function(e) {
     e.preventDefault();
     var formData = new FormData(document.getElementById('form'));
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://script.google.com/macros/s/AKfycbwmmFPFGMbw_VwC-KnG5jHFOUgWVCajq6-R8jhNApmbtBbLdemRBKJhYuyVyRR6kxeb/exec');
+    xhr.open('POST', 'https://script.google.com/macros/s/AKfycbxgYcxrG3YcIXA1A70IFGRsm_gtibZn0cjKdeoQ05zdbO7rY0xttZ-xydQGyB8CHJg3/exec');
     xhr.reload = function() {
       document.getElementById('form').reload(); 
      
