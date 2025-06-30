@@ -106,7 +106,7 @@ document.getElementById('BTN').addEventListener('click', function(e) {
 
 
 
-const inputFecha = document.getElementById('proximoLlamado');
+const inputFecha = document.getElementById('proximoLlamadoOriginal');
 
 inputFecha.addEventListener('input', (e) => {
   const fecha = new Date(inputFecha.value);
