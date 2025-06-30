@@ -79,7 +79,7 @@ document.getElementById('BTN').addEventListener('click', function(e) {
     };
     xhr.send(formData);
     alert('¡Registro exitoso!');
-    
+    form.reset(); // Borrar los campos del formulario
   });
 
 
