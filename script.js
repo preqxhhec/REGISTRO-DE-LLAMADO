@@ -93,3 +93,30 @@ document.getElementById('BTN').addEventListener('click', function(e) {
         alert("Contraseña incorrecta");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+const inputFecha = document.getElementById('proximoLLamado');
+
+inputFecha.addEventListener('input', (e) => {
+  const fecha = new Date(inputFecha.value);
+  const dia = fecha.getDate().toString().padStart(2, '0');
+  const mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
+  const año = fecha.getFullYear();
+
+  const inputFechaOculta = document.createElement('input');
+  inputFechaOculta.type = 'hidden';
+  inputFechaOculta.name = 'proximoLlamado';
+  inputFechaOculta.value = `${dia}/${mes}/${año}`;
+  inputFecha.parentNode.appendChild(inputFechaOculta);
+});
