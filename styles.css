@@ -221,3 +221,10 @@ body{
     font-weight: bold;
     font-style: italic black;
 }
+
+
+
+
+.oculto {
+  display: none;
+}
