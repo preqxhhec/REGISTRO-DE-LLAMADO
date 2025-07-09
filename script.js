@@ -108,22 +108,33 @@ document.getElementById('BTN').addEventListener('click', function(e) {
 
 // Cambiar el formato de fecha a dd/mm/yyyy
 
-const inputProximoLlamadoOriginal = document.getElementById('proximoLlamadoOriginal');
+const inputFechaIc = document.getElementById('proximoLlamadoOriginal');
+const form = document.getElementById('form');
 
-inputProximoLlamadoOriginal.addEventListener('input', (e) => {
-  const inputValue = inputProximoLlamadoOriginal.value; // Ejemplo: "2025-07-01"
-  const [año, mes, dia] = inputValue.split('-'); // Extrae año, mes, día
+inputFechaIc.addEventListener('input', (e) => {
+  const inputValue = inputFechaIc.value; // Obtiene el valor del input
 
-  // Eliminar input oculto previo para evitar duplicados
-  const existingHiddenProximoLlamado = document.querySelector('input[name="proximoLlamado"]');
-  if (existingHiddenProximoLlamado) {
-    existingHiddenProximoLlamado.remove();
+  if (inputValue !== "") { // Verifica si el input no está vacío
+    const [año, mes, dia] = inputValue.split('-'); // Divide la fecha en año, mes y día
+    const fechaFormateada = `${dia}/${mes}/${año}`; // Formatea la fecha a dd/mm/aaaa
+
+    // Crea un input oculto con el nombre "proximoLlamado" y el valor de la fecha formateada
+    const existingHiddenproximoLlamadoOriginal = document.querySelector('input[name="proximoLlamado"]');
+    if (existingHiddenproximoLlamadoOriginal) {
+      existingHiddenproximoLlamadoOriginal.value = fechaFormateada;
+    } else {
+      const inputFechaOculta = document.createElement('input');
+      inputFechaOculta.type = 'text'; // Establece el tipo en text
+      inputFechaOculta.name = 'proximoLlamado';
+      inputFechaOculta.value = fechaFormateada;
+      inputFechaOculta.classList.add('oculto'); // Agrega la clase oculto
+      inputFechaIc.parentNode.appendChild(inputFechaOculta);
+    }
+  } else {
+    // Elimina el input oculto si el input original está vacío
+    const existingHiddenproximoLlamadoOriginal = document.querySelector('input[name="proximoLlamado"]');
+    if (existingHiddenproximoLlamadoOriginal) {
+      existingHiddenproximoLlamadoOriginal.remove();
+    }
   }
-
-  // Crear nuevo input oculto
-  const inputFechaOculta = document.createElement('input');
-  inputFechaOculta.type = 'hidden';
-  inputFechaOculta.name = 'proximoLlamado';
-  inputFechaOculta.value = `${dia}/${mes}/${año}`; // Formato dd/mm/yyyy
-  inputProximoLlamadoOriginal.parentNode.appendChild(inputFechaOculta);
 });
